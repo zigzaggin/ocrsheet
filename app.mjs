@@ -10,7 +10,7 @@ import converter from "./lib/converter";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port = 80;
+const port = process.env.PORT || 3000;
 
 app.use('/public', express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));

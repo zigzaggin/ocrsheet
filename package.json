@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "server": "node --experimental-modules app.mjs",
+    "start": "node --experimental-modules app.mjs",
     "convert": "node --experimental-modules --max-old-space-size=8192 convert.mjs"
   },
   "keywords": [],

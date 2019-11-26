@@ -5,7 +5,7 @@ import fs from "fs";
 import {fileURLToPath} from 'url';
 import bodyParser from "body-parser"
 
-import converter from "./lib/converter";
+import converter from "./lib/converter.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

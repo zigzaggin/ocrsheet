@@ -2,7 +2,7 @@
   "name": "ocrsheet",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "server": "node --experimental-modules app.mjs",
     "convert": "node --experimental-modules --max-old-space-size=8192 convert.mjs"

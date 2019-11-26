@@ -1,4 +1,5 @@
-let notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+let sharps = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+let flats = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 
 export default {
     modifiers: [
@@ -15,16 +16,26 @@ export default {
 
     provide(key) {
         let rtv = [];
-        let n = notes.indexOf(key);
+        let source = sharps;
+
+        if (key === "F")
+            source = flats;
+
+        let n = source.indexOf(key);
+
+        if (!n) {
+            source = flats;
+            n = source.indexOf(key);
+        }
 
         let steps = [2, 2, 1, 2, 2, 2, 1];
         for (let i = 0; i < 7; i++) {
-            let note = notes[n];
+            let note = source[n];
             rtv.push(note);
             n += steps[i];
 
-            if (n >= notes.length) {
-                n = n - notes.length;
+            if (n >= source.length) {
+                n = n - source.length;
             }
         }
 
@@ -33,7 +44,10 @@ export default {
         let obj = {};
         rtv.forEach((v, i) => {
             let minor = minors.includes(i + 1) ? "m" : "";
-            obj[v + minor] = {n: (i + 1) + minor}
+            obj[v + minor] = {n: (i + 1) + minor};
+            if (minor) {
+                obj[v] = {n: (i + 1)};
+            }
         });
 
         return obj;

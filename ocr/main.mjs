@@ -2,7 +2,7 @@ import Tesseract from "tesseract.js";
 import Jimp from "jimp";
 import fs from "fs"
 
-import translations from "./translations.mjs";
+import translations from "./../lib/translations.mjs";
 
 let sourceKey = translations.provide('D');
 console.log(sourceKey);

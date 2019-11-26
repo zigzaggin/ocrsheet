@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-modules --max-old-space-size=8192 main.mjs",
-    "start2": "node --experimental-modules --max-old-space-size=8192 main2.mjs",
-    "start3": "node --experimental-modules --max-old-space-size=8192 main3.mjs",
-    "convert": "node convert-pdf.js"
+    "convert": "node --experimental-modules --max-old-space-size=8192 convert.mjs"
+  },
+  "config": {
+    "path": "test-file.pdf",
+    "sourceKey": "PLEASE SUPPLY",
+    "output": "test-out.pdf"
   },
   "keywords": [],
   "author": "",

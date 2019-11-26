@@ -2,7 +2,7 @@ import Tesseract from "tesseract.js";
 import Jimp from "jimp";
 import fs from "fs"
 
-import translations from "./translations";
+import translations from "./translations.mjs";
 
 let sourceKey = translations.provide('D');
 console.log(sourceKey);
@@ -69,7 +69,6 @@ const worker = Tesseract.createWorker({
                             Jimp.cssColorToHex("#ffffff"),
                             (err, value) => {
                                 result.composite(value, box.bbox.x0 - 5, box.bbox.y0 - 5);
-                                console.log(found.n, box.bbox.x0, box.bbox.y0)
 
                                 Jimp.loadFont(Jimp.FONT_SANS_32_BLACK)
                                     .then(font => {
@@ -86,7 +85,6 @@ const worker = Tesseract.createWorker({
                                             50,
                                             (err, image, {x, y}) => {
                                                 if (found.modifier) {
-                                                    console.log(found.modifier);
                                                     image.print(
                                                         font,
                                                         x,

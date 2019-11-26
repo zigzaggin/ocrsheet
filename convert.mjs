@@ -1,4 +1,4 @@
-import converter from "./converter";
+import converter from "./lib/converter";
 
 (async () => {
     await converter({

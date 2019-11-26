@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Convert-o-matic 440</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="/public/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<h1 class="title">Convert-o-matic 440</h1>
 <div class="content">
-    <h1>Convert-o-matic 440</h1>
     <form method="post" enctype="multipart/form-data">
-        <label>
-            Source File
-        </label>
-        <input type="file" name="file"/>
-        <label>
-            Key
-        </label>
-        <input type="text" name="key" value="" />
-        <input type="submit" value="Convert"/>
+        <div class="row">
+            <div class="control">
+                <label>
+                    Source File
+                </label>
+                <input type="file" name="file"/>
+            </div>
+            <div class="control">
+                <label>
+                    Key
+                </label>
+                <input type="text" name="key" value=""/>
+            </div>
+        </div>
+        <div class="clear">
+            <input type="submit" value="Convert"/>
+        </div>
     </form>
 </div>
 </body>
